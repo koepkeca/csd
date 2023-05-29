@@ -1,3 +1,3 @@
-module github.com/csd/stack
+module github.com/koepkeca/csd/stack
 
 go 1.19
