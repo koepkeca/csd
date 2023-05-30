@@ -27,8 +27,8 @@ func (s *S) Pop() (v interface{}) {
 			vChan <- nil
 			return
 		}
-		item := old[0]
-		*curr = old[1:n]
+		item := old[n-1]
+		*curr = old[0 : n-1]
 		vChan <- item
 		return
 	}
@@ -38,7 +38,8 @@ func (s *S) Pop() (v interface{}) {
 // Push will push the value v onto the stack.
 func (s *S) Push(v interface{}) {
 	s.op <- func(curr *stack) {
-		*curr = append([]interface{}{v}, *curr...)
+		//		*curr = append([]interface{}{v}, *curr...)
+		*curr = append(*curr, v)
 		return
 	}
 	return

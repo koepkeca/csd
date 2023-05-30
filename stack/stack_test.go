@@ -101,7 +101,7 @@ func BenchmarkROnlyWithInt(b *testing.B) {
 		s.Push(i)
 	}
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for i := 0; i < nbr; i++ {
 		_ = s.Pop()
 	}
 	s.Close()
